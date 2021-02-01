@@ -24,10 +24,10 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 			$result2 = mysqli_query($conn, $sql);  
 $row2 = mysqli_fetch_array($result, MYSQLI_ASSOC);  
         $count2 = mysqli_num_rows($result2); 
-		if($count == 1)
+		
 			$doctorid=$row["doctorid"];
-		if($doctorid>0)
-			echo "<form action='' method='POST'>
+		if($doctorid!=NULL)
+			echo "<form action='values.php' method='POST'>
 		<h2>Enter values<h2>
 		<input type='textbox' name='value1'><br>
 		<input type='textbox' name='value2'><br>
@@ -45,7 +45,7 @@ Your doctor name <input type='text' name='doctor' value='Dr.'>
         else{  
             echo "<h1> Login failed. Invalid username or password.</h1>";
 		}
-		 $sql = "select doctorid from patient where userid = '$id'";
+		 
 
 ?>
 </body>
